@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fabel-Werkstatt – Fabeln entdecken (Klasse 6)</title>
+    <meta name="description" content="Interaktive Lern-App für die 6. Klasse: Was ist eine Fabel? Mit animierter Fabel und Abschlussquiz." />
+    <link rel="preload" href="assets/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/style.css?v=1.0.0" />
+  </head>
+  <body>
+    <header class="top">
+      <button class="brand" data-go="0" aria-label="Zur Startseite">
+        <span class="brand-mark" aria-hidden="true">🦉</span>
+        <span class="brand-name">Fabel-Werkstatt</span>
+      </button>
+      <nav class="steps" aria-label="Stationen">
+        <button class="step" data-go="1"><span class="step-no">1</span><span class="step-label">Was ist das?</span></button>
+        <button class="step" data-go="2"><span class="step-no">2</span><span class="step-label">Die Tiere</span></button>
+        <button class="step" data-go="3"><span class="step-no">3</span><span class="step-label">Der Aufbau</span></button>
+        <button class="step" data-go="4"><span class="step-no">4</span><span class="step-label">Die Fabel</span></button>
+        <button class="step" data-go="5"><span class="step-no">5</span><span class="step-label">Das Quiz</span></button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ───────── Start ───────── -->
+      <section class="view" id="view-0">
+        <div class="hero">
+          <img class="hero-img" src="assets/img/szene1.jpg" alt="Ein Löwe und eine kleine Maus schauen sich in der Savanne an." />
+          <div class="hero-text">
+            <p class="kicker">Deutsch · Klasse 6</p>
+            <h1>Fabeln entdecken</h1>
+            <p class="lead">Warum sprechen in manchen Geschichten die Tiere? Und was wollen sie uns damit sagen? In fünf kurzen Stationen findest du es heraus.</p>
+          </div>
+        </div>
+        <div class="owl-row">
+          <img class="owl" src="assets/img/eule-hallo.jpg" alt="Herr Uhu, eine freundliche Eule mit Brille und Fliege" />
+          <div class="bubble">
+            <p class="bubble-name">Herr Uhu</p>
+            <p>Hallo! Ich bin Herr Uhu, dein Lehrer in der Fabel-Werkstatt. Ich begleite dich durch alle Stationen. Am Ende wartet eine spannende Fabel als Film auf dich – und ein Quiz, in dem du zeigen kannst, was du gelernt hast.</p>
+          </div>
+        </div>
+        <ol class="roadmap">
+          <li><b>Was ist eine Fabel?</b> Die drei wichtigsten Merkmale</li>
+          <li><b>Die Tiere:</b> Wer ist listig, wer ist mächtig?</li>
+          <li><b>Der Aufbau:</b> Vier Teile, die jede Fabel hat</li>
+          <li><b>Die Fabel:</b> „Der Löwe und die Maus“ als Film</li>
+          <li><b>Das Quiz:</b> Werde Fabel-Profi!</li>
+        </ol>
+        <div class="actions"><button class="btn btn-primary btn-big" data-go="1">Los geht’s!</button></div>
+      </section>
+
+      <!-- ───────── Station 1 ───────── -->
+      <section class="view" id="view-1" hidden>
+        <p class="kicker">Station 1</p>
+        <h2>Was ist eine Fabel?</h2>
+        <div class="owl-row">
+          <img class="owl owl-small" src="assets/img/eule-hallo.jpg" alt="" />
+          <div class="bubble">
+            <p>Eine Fabel ist eine <b>kurze Geschichte</b>, aus der man etwas lernen soll. Merke dir drei Dinge – tippe die Karten an!</p>
+          </div>
+        </div>
+        <div class="flip-grid">
+          <button class="flip" aria-expanded="false">
+            <span class="flip-front"><span class="flip-icon" aria-hidden="true">📜</span>Merkmal 1</span>
+            <span class="flip-back"><b>Kurz</b><br />Eine Fabel ist nur wenige Sätze lang. Sie kommt schnell zur Sache.</span>
+          </button>
+          <button class="flip" aria-expanded="false">
+            <span class="flip-front"><span class="flip-icon" aria-hidden="true">🦊</span>Merkmal 2</span>
+            <span class="flip-back"><b>Tiere wie Menschen</b><br />Die Tiere sprechen, denken und handeln wie Menschen.</span>
+          </button>
+          <button class="flip" aria-expanded="false">
+            <span class="flip-front"><span class="flip-icon" aria-hidden="true">💡</span>Merkmal 3</span>
+            <span class="flip-back"><b>Eine Lehre</b><br />Am Ende steht eine Lehre (die <i>Moral</i>): ein Rat für unser eigenes Leben.</span>
+          </button>
+        </div>
+        <div class="note">
+          <b>Gut zu wissen:</b> Fabeln gibt es schon seit über 2500 Jahren. Der berühmteste Fabeldichter war <b>Äsop</b> aus dem alten Griechenland. Mit Tieren konnte er die Fehler der Menschen zeigen, ohne jemanden direkt zu beleidigen.
+        </div>
+
+        <h3>Probier’s aus: Welche Geschichte ist eine Fabel?</h3>
+        <div class="choices" id="check1">
+          <button class="choice" data-ok="0" data-why="Das ist ein Märchen: Es gibt Zauberei, aber keine Lehre am Ende.">Eine Hexe verzaubert einen Prinzen in einen Frosch. Erst ein Kuss erlöst ihn.</button>
+          <button class="choice" data-ok="1" data-why="Genau! Tiere handeln wie Menschen, die Geschichte ist kurz und endet mit einer Lehre.">Eine fleißige Ameise sammelt Vorräte, die Grille singt nur. Im Winter merkt die Grille: Wer nicht vorsorgt, muss hungern.</button>
+          <button class="choice" data-ok="0" data-why="Das ist ein Sportbericht: Er informiert über etwas, das wirklich passiert ist.">Gestern gewann der FC Waldau mit 3:1 gegen den SV Bergheim.</button>
+        </div>
+        <p class="feedback" id="check1-fb" role="status" aria-live="polite"></p>
+        <div class="actions"><button class="btn btn-primary" data-go="2" id="next1" disabled>Weiter zu Station 2</button></div>
+      </section>
+
+      <!-- ───────── Station 2 ───────── -->
+      <section class="view" id="view-2" hidden>
+        <p class="kicker">Station 2</p>
+        <h2>Die Tiere und ihre Eigenschaften</h2>
+        <div class="owl-row">
+          <img class="owl owl-small" src="assets/img/eule-hallo.jpg" alt="" />
+          <div class="bubble">
+            <p>In Fabeln hat jedes Tier eine <b>typische Eigenschaft</b>. Der Fuchs ist zum Beispiel fast immer listig. So weiß man sofort, wie sich ein Tier verhalten wird.</p>
+            <p>Tippe erst ein Tier an und dann die passende Eigenschaft.</p>
+          </div>
+        </div>
+        <div class="match" id="match">
+          <div class="match-col" id="match-animals" aria-label="Tiere"></div>
+          <div class="match-col" id="match-traits" aria-label="Eigenschaften"></div>
+        </div>
+        <p class="feedback" id="match-fb" role="status" aria-live="polite"></p>
+        <div class="actions"><button class="btn btn-primary" data-go="3" id="next2" disabled>Weiter zu Station 3</button></div>
+      </section>
+
+      <!-- ───────── Station 3 ───────── -->
+      <section class="view" id="view-3" hidden>
+        <p class="kicker">Station 3</p>
+        <h2>Der Aufbau einer Fabel</h2>
+        <div class="owl-row">
+          <img class="owl owl-small" src="assets/img/eule-hallo.jpg" alt="" />
+          <div class="bubble"><p>Fast jede Fabel ist gleich gebaut – wie ein Haus mit vier Stockwerken. Wenn du diese vier Teile kennst, kannst du jede Fabel verstehen.</p></div>
+        </div>
+        <ol class="parts">
+          <li><span class="part-no">1</span><div><b>Ausgangssituation</b><br />Wer ist da? Wo sind die Tiere? Was ist los?</div></li>
+          <li><span class="part-no">2</span><div><b>Konflikt</b><br />Die Tiere geraten aneinander. Oft sprechen sie miteinander: Rede und Gegenrede.</div></li>
+          <li><span class="part-no">3</span><div><b>Lösung</b><br />Der Streit geht zu Ende – oft mit einer Überraschung.</div></li>
+          <li><span class="part-no">4</span><div><b>Lehre</b><br />Was lernen wir daraus? (die Moral)</div></li>
+        </ol>
+
+        <h3>Probier’s aus: Bringe die Fabel „Der Fuchs und der Rabe“ in die richtige Reihenfolge</h3>
+        <p class="hint">Tippe einen Textstreifen an und dann das passende Feld. Ein Tipp auf ein gefülltes Feld holt den Streifen zurück.</p>
+        <div class="order-slots" id="order-slots"></div>
+        <div class="order-pool" id="order-pool"></div>
+        <p class="feedback" id="order-fb" role="status" aria-live="polite"></p>
+        <div class="actions">
+          <button class="btn" id="order-check" disabled>Prüfen</button>
+          <button class="btn btn-primary" data-go="4" id="next3" disabled>Weiter zum Film</button>
+        </div>
+      </section>
+
+      <!-- ───────── Station 4 ───────── -->
+      <section class="view" id="view-4" hidden>
+        <p class="kicker">Station 4 · Der Höhepunkt</p>
+        <h2>Der Löwe und die Maus</h2>
+        <div class="owl-row">
+          <img class="owl owl-small" src="assets/img/eule-hallo.jpg" alt="" />
+          <div class="bubble"><p>Vorhang auf! Schau dir den Film genau an. Oben links siehst du immer, in welchem Teil der Fabel wir gerade sind. Achte darauf, <b>warum</b> der Löwe lacht.</p></div>
+        </div>
+        <div class="stage">
+          <video id="film" controls playsinline preload="metadata" poster="assets/img/szene1.jpg">
+            <source src="assets/video/der-loewe-und-die-maus.mp4" type="video/mp4" />
+            Dein Browser kann den Film leider nicht abspielen. Lies die Fabel unten nach.
+          </video>
+        </div>
+        <details class="readalong">
+          <summary>Die Fabel zum Nachlesen</summary>
+          <div class="story">
+            <p><span class="tag">Ausgangssituation</span> An einem heißen Mittag schlief der mächtige Löwe im Schatten eines alten Baumes. Eine kleine Maus huschte durchs Gras – und lief ihm aus Versehen mitten über die Nase.</p>
+            <p><span class="tag">Konflikt</span> Der Löwe fuhr hoch und packte die Maus mit seiner gewaltigen Pranke. „Wer wagt es, den König der Tiere zu wecken?“, brüllte er. „Verzeih mir, großer Löwe!“, piepste die Maus. „Lass mich frei – eines Tages helfe ich dir dafür.“ Da lachte der Löwe laut: „Du Winzling willst mir helfen?“ Doch weil er so lachen musste, ließ er sie laufen.</p>
+            <p><span class="tag">Lösung</span> Wenige Tage später geriet der Löwe in das Netz eines Jägers. Er zerrte und brüllte, doch die Seile hielten ihn fest. Die Maus hörte sein Brüllen und eilte herbei. Mit ihren scharfen Zähnen nagte sie Seil um Seil durch – bis der Löwe frei war. „Du hast über mich gelacht“, sagte die Maus, „und nun habe ich dir das Leben gerettet.“ Der Löwe senkte seinen Kopf: „Danke, kleine Freundin. Ich habe mich in dir getäuscht.“</p>
+            <p><span class="tag">Lehre</span> Auch der Kleinste kann dem Größten helfen. Unterschätze niemanden!</p>
+          </div>
+        </details>
+
+        <h3>Denk nach: Was hat die Fabel mit uns Menschen zu tun?</h3>
+        <div class="choices" id="check4">
+          <button class="choice" data-ok="0" data-why="Um echte Löwen geht es nicht – die Tiere stehen für Menschen.">Man soll sich von Löwen fernhalten.</button>
+          <button class="choice" data-ok="1" data-why="Richtig! Der Löwe steht für starke, mächtige Menschen – die Maus für die, die klein oder schwach wirken. Jeder kann einmal Hilfe brauchen.">Auch wer klein oder schwach wirkt, kann anderen sehr helfen. Darum sollte man niemanden auslachen.</button>
+          <button class="choice" data-ok="0" data-why="Die Maus wird gerade dafür belohnt, dass sie ihr Versprechen hält.">Versprechen muss man nicht halten.</button>
+        </div>
+        <p class="feedback" id="check4-fb" role="status" aria-live="polite"></p>
+        <div class="actions"><button class="btn btn-primary" data-go="5" id="next4" disabled>Weiter zum Quiz</button></div>
+      </section>
+
+      <!-- ───────── Station 5 ───────── -->
+      <section class="view" id="view-5" hidden>
+        <p class="kicker">Station 5</p>
+        <h2>Das Abschlussquiz</h2>
+        <div id="quiz"></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span>Fabel-Werkstatt <span id="version"></span></span>
+      <button class="link" id="reset">Fortschritt zurücksetzen</button>
+    </footer>
+
+    <script src="js/app.js?v=1.0.0"></script>
+  </body>
+</html>

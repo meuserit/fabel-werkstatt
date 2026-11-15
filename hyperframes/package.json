@@ -1,0 +1,12 @@
+{
+  "name": "fabel-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "npx --yes hyperframes@0.9.54 preview",
+    "check": "npx --yes hyperframes@0.9.54 check",
+    "render": "node build.mjs && npx --yes hyperframes@0.9.54 render -o out/fabel.mp4 -q high"
+  }
+}
