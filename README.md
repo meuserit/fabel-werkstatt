@@ -1,6 +1,6 @@
 # Fabel-Werkstatt
 
-Interaktive Lern-WebApp für die **6. Klasse** zum Thema **Fabel** – Version **1.0.0**
+Interaktive Lern-WebApp für die **6. Klasse** zum Thema **Fabel** – Version **1.1.0**
 
 Die App führt in fünf kurzen Stationen durch das Thema. Lehrer-Eule **Herr Uhu** begleitet die Kinder und motiviert im Abschlussquiz.
 
@@ -10,7 +10,7 @@ Die App führt in fünf kurzen Stationen durch das Thema. Lehrer-Eule **Herr Uhu
 | 2 · Die Tiere | Typische Eigenschaften der Fabeltiere | Tier und Eigenschaft zuordnen |
 | 3 · Der Aufbau | Ausgangssituation – Konflikt – Lösung – Lehre | „Der Fuchs und der Rabe“ in die richtige Reihenfolge bringen |
 | 4 · Die Fabel | „Der Löwe und die Maus“ als animierter Film (89 s, mit Sprecher und Untertiteln) | Frage zur Übertragung auf Menschen |
-| 5 · Das Quiz | 10 Fragen in zufälliger Reihenfolge | Rückmeldung von Herrn Uhu nach jeder Antwort, Ergebnis mit Sternen |
+| 5 · Das Quiz | 10 Fragen in zufälliger Reihenfolge | Rückmeldung von Herrn Uhu nach jeder Antwort, Ergebnis mit Sternen, zum Abschluss das Fabel-Lied „Fabelschlau“ mit Text zum Mitsingen |
 
 ## Starten
 
@@ -29,6 +29,7 @@ css/style.css         Gestaltung
 js/app.js             Übungen, Quiz, Fortschritt (Versionsnummer: VERSION)
 assets/img            Illustrationen (Szenen, Herr Uhu)
 assets/video          Fertig gerenderter Film
+assets/audio          Fabel-Lied „Fabelschlau“
 assets/fonts          Schriften Fraunces und Nunito
 hyperframes/          Quelle des Films (Hyperframes-Komposition)
 ```
@@ -53,9 +54,11 @@ Voraussetzungen: Node.js 22+, FFmpeg, Chrome.
 
 - Fabel „Der Löwe und die Maus“ frei nacherzählt nach Äsop (gemeinfrei).
 - Illustrationen und Sprecherstimme: KI-generiert mit Higgsfield (Bilder: GPT Image, Stimme: ElevenLabs).
+- Lied „Fabelschlau“: Text eigens für die App geschrieben, Musik und Gesang KI-generiert mit Suno.
 - Schriften: Fraunces und Nunito (SIL Open Font License 1.1).
 - Animation: GSAP (im Ordner `hyperframes/vendor`, Standard-Lizenz von GSAP).
 
 ## Versionen
 
+- **1.1.0** – Fabel-Lied „Fabelschlau“ als Abschluss nach dem Quiz, mit Text zum Mitsingen.
 - **1.0.0** – Erste Fassung: fünf Stationen, Film „Der Löwe und die Maus“, Abschlussquiz mit Herrn Uhu.

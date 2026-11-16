@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  var VERSION = "1.0.0";
+  var VERSION = "1.1.0";
   var STORE_KEY = "fabelwerkstatt.v1";
 
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
@@ -480,6 +480,8 @@
     box.appendChild(card);
     box.appendChild(owlRow(img, "Herr Uhu", lines));
 
+    box.appendChild(songCard());
+
     var actions = el("div", "actions");
     var again = el("button", "btn btn-primary", "Quiz noch einmal spielen");
     again.addEventListener("click", function () { startQuiz(true); });
@@ -488,6 +490,49 @@
     actions.appendChild(again);
     actions.appendChild(home);
     box.appendChild(actions);
+  }
+
+  /* ---------- Abschluss: das Fabel-Lied ---------- */
+  var SONG = [
+    ["Strophe 1", ["Der Löwe schläft im Schatten, der Mittag ist so heiß,", "da huscht die kleine Maus vorbei, ganz flink und leis.", "Er packt sie mit der Pranke, sie piepst: „Lass mich doch frei!", "Ich helf dir eines Tages!“ – da lacht er laut dabei."]],
+    ["Refrain", ["Das ist eine Fabel, kurz und klug erzählt,", "Tiere, die wie Menschen sind, und eine Lehre, die nie fehlt.", "Ob groß, ob klein, ob stark, ob schwach – merk dir das genau:", "Unterschätze niemanden, dann bist du fabelschlau!"]],
+    ["Strophe 2", ["Ein Jäger spannt die Netze, der Löwe sitzt nun fest,", "er brüllt und zerrt vergebens, weil das Seil ihn nicht mehr lässt.", "Da kommt die Maus gelaufen und nagt mit scharfem Zahn,", "Seil um Seil, bis er befreit ist – was die Kleine alles kann!"]],
+    ["Refrain", null],
+    ["Bridge", ["Erst die Ausgangssituation,", "dann der Konflikt – wer streitet schon?", "Dann die Lösung, oft ganz schlau,", "und am Schluss die Lehre – ganz genau!"]],
+    ["Refrain", null],
+    ["Schluss", ["Auch der Kleinste kann dem Größten helfen."]]
+  ];
+
+  function songCard() {
+    var card = el("section", "song");
+    card.appendChild(el("p", "kicker", "Zum Abschluss"));
+    card.appendChild(el("h3", "song-title", "Das Fabel-Lied: „Fabelschlau“"));
+    card.appendChild(el("p", "hint", "Geschafft! Zur Belohnung gibt es ein Lied zum Mitsingen – darin steckt alles, was du über Fabeln gelernt hast."));
+    var audio = el("audio", "song-player");
+    audio.controls = true;
+    audio.preload = "none";
+    audio.src = "assets/audio/fabelschlau.mp3";
+    card.appendChild(audio);
+    var det = el("details", "readalong");
+    det.appendChild(el("summary", null, "Text zum Mitsingen"));
+    var body = el("div", "lyrics");
+    SONG.forEach(function (part) {
+      body.appendChild(el("p", "lyrics-part", part[0]));
+      var p = el("p", "lyrics-lines");
+      if (part[1]) {
+        part[1].forEach(function (line, i) {
+          if (i) p.appendChild(document.createElement("br"));
+          p.appendChild(document.createTextNode(line));
+        });
+      } else {
+        p.textContent = "Das ist eine Fabel, kurz und klug erzählt …";
+        p.classList.add("is-repeat");
+      }
+      body.appendChild(p);
+    });
+    det.appendChild(body);
+    card.appendChild(det);
+    return card;
   }
 
   function confetti() {
